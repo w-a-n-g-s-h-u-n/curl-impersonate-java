@@ -23,8 +23,7 @@ case "$(uname -s)" in
 esac
 
 gcc $JNI_INCLUDE -o libcurlwrapper$LIB_SUFFIX -shared -fPIC *.c -lcurl
-
-gcc -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/$(uname -s)" -o libcurlwrapper.so -shared -fPIC com_stanwind_CurlWrapper.c -lcurl
-
-#mv libcurlwrapper.so ../libs/
 mv libcurlwrapper.* ../libs/libcurl-impersonate/
+
+#gcc -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/$(uname -s)" -o libcurlwrapper.so -shared -fPIC com_stanwind_CurlWrapper.c -lcurl
+#mv libcurlwrapper.so ../libs/
